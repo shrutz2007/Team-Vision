@@ -1,0 +1,100 @@
+
+1
+<?xml version="1.0" encoding="UTF-8" ?>
+2
+<!DOCTYPE html>
+3
+<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+4
+ &lt;head&gt;
+5
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+6
+    <b:include data='blog' name='all-head-content'/>
+7
+​
+8
+    <title>
+9
+      <b:if cond='data:blog.pageType == &quot;index&quot;'>
+10
+        <data:blog.pageTitle/>
+11
+        <b:else/>
+12
+        <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
+13
+          <data:blog.pageName/> - <data:blog.title/>
+14
+          <b:else/>
+15
+          ERROR 404 - <data:blog.title/> 
+16
+        </b:if>
+17
+      </b:if>
+18
+    </title>
+19
+​
+20
+    <!-- Description and Keywords -->
+21
+    <b:if cond='data:blog.pageType == &quot;index&quot;'>
+22
+      <meta content='YOUR DESCRIPTION HERE' name='description'/>
+23
+    </b:if>
+24
+    <meta content='YOUR KEYWORDS HERE' name='keywords'/>
+25
+    <b:if cond='data:blog.pageType == &quot;item&quot;'>
+26
+      <meta expr:content='data:blog.pageName' property='og:title'/>
+27
+      <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+28
+      <meta content='article' property='og:type'/>
+29
+    </b:if>
+30
+    <b:if cond='data:blog.postImageUrl'>
+31
+      <meta expr:content='data:blog.postImageUrl' property='og:image'/>
+32
+      <b:else/>
+33
+      <b:if cond='data:blog.postImageThumbnailUrl'>
+34
+        <meta expr:content='data:blog.postImageThumbnailUrl' property='og:image'/>
+35
+      </b:if></b:if>
+36
+    <b:if cond='data:blog.metaDescription != &quot;&quot;'>
+37
+      <meta expr:content='data:blog.metaDescription' name='og:description'/>
+38
+    </b:if>
+39
+    <meta expr:content='data:blog.title' property='og:site_name'/>
+40
+    <meta expr:content='data:blog.homepageUrl' name='twitter:domain'/>
+41
+    <meta expr:content='data:blog.pageName' name='twitter:title'/>
+42
+    <b:if cond='data:blog.postImageUrl'>
+43
+      <meta content='summary_large_image' name='twitter:card'/>
+44
+      <meta expr:content='data:blog.postImageUrl' name='twitter:image'/>
+45
+      <b:else/>
+46
+      <meta content='summary' name='twitter:card'/>
+47
+      <b:if cond='data:blog.postImageThumbnailUrl'>
+48
+        <meta expr:content='data:blog.postImageThumbnailUrl' name='twitter:image'/> 
+49
+      </b:if>
+Update successful.Template: Edit Template
